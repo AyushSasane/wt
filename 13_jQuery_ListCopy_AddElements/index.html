@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        .list-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        ul {
+            border: 1px solid #ccc;
+            padding: 10px;
+            list-style-type: none;
+            width: 150px;
+            min-height: 100px;
+        }
+        li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Demo</h1>
+    <div class="list-container">
+        <ul id="list1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <ul id="list2">
+            <!-- Initially empty -->
+        </ul>
+    </div>
+
+    <div class="button-container">
+        <button id="copyBtn">Copy Items to List 2</button>
+        <button id="addElement">Add New Item</button>
+    </div>
+</body>
+</html>

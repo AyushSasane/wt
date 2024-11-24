@@ -1,0 +1,24 @@
+/* styles.css */
+
+/* Add padding to the body */
+body {
+    padding: 20px;
+}
+
+/* Style for tab content */
+.tab-content {
+    margin-top: 20px;
+}
+
+/* Style for each tab pane */
+.tab-pane {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Paragraph style inside tab content */
+.tab-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}

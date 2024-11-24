@@ -1,0 +1,18 @@
+-- Create a database
+CREATE DATABASE IF NOT EXISTS user_login_system;
+
+-- Use the database
+USE user_login_system;
+
+-- Create a users table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Insert some dummy data into the users table
+INSERT INTO users (username, password, email) VALUES
+('john_doe', '$2y$10$4Iw1Xn5MNm6e72f5hXZ8Ou2vF5zOxdbpAeH9zqHsV23mpQUe8MtI6', 'john@example.com'),  -- password: secret123
+('jane_smith', '$2y$10$UcxSx4oa7zKr9eCejZlT4pAwwTxyBzLDGf2iDTI8zMteKtVw.AVGq', 'jane@example.com');  -- password: password456

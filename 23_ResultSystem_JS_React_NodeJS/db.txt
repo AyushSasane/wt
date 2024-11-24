@@ -1,0 +1,28 @@
+-- Create database
+CREATE DATABASE vit_data;
+
+-- Use the database
+USE vit_data;
+
+-- Create table
+CREATE TABLE vit_results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL,
+    reg_number VARCHAR(15) NOT NULL UNIQUE,
+    subject1_mse FLOAT NOT NULL,
+    subject1_ese FLOAT NOT NULL,
+    subject2_mse FLOAT NOT NULL,
+    subject2_ese FLOAT NOT NULL,
+    subject3_mse FLOAT NOT NULL,
+    subject3_ese FLOAT NOT NULL,
+    subject4_mse FLOAT NOT NULL,
+    subject4_ese FLOAT NOT NULL
+);
+
+-- Insert dummy data
+INSERT INTO vit_results (student_name, reg_number, subject1_mse, subject1_ese, subject2_mse, subject2_ese, subject3_mse, subject3_ese, subject4_mse, subject4_ese)
+VALUES 
+('Alice Johnson', '21BCE1001', 25, 65, 28, 68, 30, 70, 24, 66),
+('Bob Smith', '21BCE1002', 22, 63, 20, 58, 27, 67, 26, 68),
+('Charlie Brown', '21BCE1003', 29, 69, 30, 70, 28, 68, 30, 70),
+('Diana Prince', '21BCE1004', 20, 60, 25, 65, 21, 61, 22, 62);

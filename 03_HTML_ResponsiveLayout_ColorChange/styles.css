@@ -1,0 +1,95 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    font-size: 14px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Color Changing Section */
+#color-section {
+    width: 80%;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.color-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.color-button:hover {
+    opacity: 0.8;
+}
+
+/* Color Button Colors */
+#blue {
+    background-color: blue;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#green {
+    background-color: green;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+
+    #color-section {
+        width: 90%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

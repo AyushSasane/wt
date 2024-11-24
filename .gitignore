@@ -1,0 +1,54 @@
+# Ignore node_modules for React and Node.js projects
+node_modules/
+
+# Ignore build outputs for various environments
+/build/
+/dist/
+target/
+bin/
+out/
+
+# Ignore environment files (for sensitive data)
+.env
+.env.local
+*.env.*
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignore dependency directories for PHP
+vendor/
+
+# Ignore IntelliJ, VSCode, Eclipse, and NetBeans settings
+.idea/
+*.iml
+.vscode/
+.project/
+.nb-gradle/
+.nb-configuration/
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore OS-specific files
+desktop.ini
+
+# Ignore git directories (submodules)
+**/.git/
+
+# Specify line endings for certain file types
+* text=auto
+*.java text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.php text eol=lf
+*.md text eol=lf
+
+# Optional: Ignore test directories for some IDEs (if you want to keep them out of git)
+*.test/
+*.spec/

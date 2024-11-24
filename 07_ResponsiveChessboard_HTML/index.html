@@ -1,0 +1,53 @@
+<!-- ### Question No: 7
+**Question:** Design and develop a chessboard. The board should be alternating colors and an 
+eight-by-eight grid. Use `<header>`, `<footer>`, `<body>`, `<div>`, `<table>` and other tags. 
+The chessboard must be responsive in nature. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Chessboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Responsive Chessboard</h1>
+    </header>
+
+    <div class="board-container">
+        <table class="chessboard">
+            <tbody>
+                <!-- Loop will generate the board dynamically -->
+                <!-- Rows will be generated here using JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Chess Game</p>
+    </footer>
+
+    <script>
+        // JavaScript to create the chessboard dynamically
+        const chessboard = document.querySelector(".chessboard tbody");
+
+        // Loop through 8 rows and 8 columns
+        for (let row = 0; row < 8; row++) {
+            let tr = document.createElement("tr"); // create a row
+            for (let col = 0; col < 8; col++) {
+                let td = document.createElement("td"); // create a cell
+                // Alternating colors for cells
+                if ((row + col) % 2 === 0) {
+                    td.classList.add("light"); // light color cell
+                } else {
+                    td.classList.add("dark"); // dark color cell
+                }
+                tr.appendChild(td);
+            }
+            chessboard.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

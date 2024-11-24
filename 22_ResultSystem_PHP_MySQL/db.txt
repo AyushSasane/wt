@@ -1,0 +1,35 @@
+CREATE DATABASE vit_results;
+
+USE vit_results;
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    roll_no VARCHAR(50) UNIQUE NOT NULL,
+    semester INT NOT NULL
+);
+
+CREATE TABLE marks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    mse_marks FLOAT NOT NULL,
+    ese_marks FLOAT NOT NULL,
+    total_marks FLOAT GENERATED ALWAYS AS (mse_marks + ese_marks) STORED,
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+-- Insert Dummy Data
+INSERT INTO students (name, roll_no, semester) VALUES 
+('John Doe', '20BCS001', 3),
+('Jane Smith', '20BCS002', 3);
+
+INSERT INTO marks (student_id, subject, mse_marks, ese_marks) VALUES 
+(1, 'Mathematics', 20, 50),
+(1, 'Physics', 25, 55),
+(1, 'Chemistry', 22, 48),
+(1, 'Computer Science', 30, 65),
+(2, 'Mathematics', 18, 45),
+(2, 'Physics', 23, 50),
+(2, 'Chemistry', 20, 47),
+(2, 'Computer Science', 28, 60);

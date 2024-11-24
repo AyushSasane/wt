@@ -1,0 +1,15 @@
+# Text files should always use LF
+* text=auto
+
+# Specify binary files that shouldn't be converted
+*.jpg binary
+*.png binary
+*.exe binary
+
+# Specific files to always use LF
+*.sh eol=lf
+*.java eol=lf
+
+# Files to always use CRLF
+*.bat eol=crlf
+*.cmd eol=crlf

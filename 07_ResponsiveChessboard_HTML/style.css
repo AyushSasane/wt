@@ -1,0 +1,89 @@
+/* General reset and layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body layout */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Chessboard container styles */
+.board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Chessboard styles */
+.chessboard {
+    width: 80vmin; /* responsive size relative to viewport */
+    height: 80vmin; /* Keep it square */
+    border-collapse: collapse;
+}
+
+/* Chessboard cells */
+.chessboard td {
+    width: 12.5%; /* Each cell will take up 12.5% of the width (8 cells per row) */
+    height: 12.5%; /* Each cell will take up 12.5% of the height (8 cells per column) */
+    background-color: #f0d9b5; /* Default light color */
+}
+
+/* Light and dark color cells */
+.chessboard td.light {
+    background-color: #f0d9b5; /* Light color */
+}
+
+.chessboard td.dark {
+    background-color: #b58863; /* Dark color */
+}
+
+/* Make chessboard responsive */
+@media (max-width: 768px) {
+    .chessboard {
+        width: 90vmin;
+        height: 90vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    .chessboard {
+        width: 95vmin;
+        height: 95vmin;
+    }
+}

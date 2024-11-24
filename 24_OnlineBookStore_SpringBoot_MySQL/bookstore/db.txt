@@ -1,0 +1,41 @@
+-- Create the 'bookstore' database
+CREATE DATABASE IF NOT EXISTS bookstore1;
+
+-- Use the bookstore database
+USE bookstore1;
+
+-- Create the 'users' table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create the 'books' table
+CREATE TABLE IF NOT EXISTS books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert dummy data into the 'users' table
+INSERT INTO users (username, password, email) VALUES 
+('john_doe', 'password123', 'john@example.com'),
+('jane_doe', 'password456', 'jane@example.com'),
+('admin', 'adminpassword', 'admin@example.com');
+
+-- Insert dummy data into the 'books' table
+INSERT INTO books (title, author, price, description) VALUES 
+('The Great Gatsby', 'F. Scott Fitzgerald', 10.99, 'A novel set in the Jazz Age, reflecting on the American dream and social class dynamics.'),
+('To Kill a Mockingbird', 'Harper Lee', 8.99, 'A Pulitzer Prize-winning novel that deals with racism, injustice, and moral growth in the 1930s South.'),
+('1984', 'George Orwell', 7.99, 'A dystopian social science fiction novel set in a totalitarian society controlled by a pervasive surveillance system and oppressive government.'),
+('Pride and Prejudice', 'Jane Austen', 6.99, 'A classic romance novel that explores themes of love, reputation, and class in early 19th century England.'),
+('The Catcher in the Rye', 'J.D. Salinger', 9.49, 'A story about adolescent alienation and the quest for identity, told from the perspective of the disillusioned Holden Caulfield.'),
+('Moby-Dick', 'Herman Melville', 12.99, 'A sea adventure and philosophical novel about the obsessive quest of Captain Ahab to hunt the elusive white whale.'),
+('The Hobbit', 'J.R.R. Tolkien', 10.50, 'A fantasy novel about Bilbo Baggins, a hobbit who embarks on an unexpected journey with a group of dwarves to reclaim their treasure.'),
+('The Lord of the Rings', 'J.R.R. Tolkien', 20.00, 'A high-fantasy epic about the journey of Frodo Baggins to destroy a powerful ring that could bring darkness to the world.');
