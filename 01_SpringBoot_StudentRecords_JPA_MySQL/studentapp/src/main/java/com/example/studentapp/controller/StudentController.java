@@ -1,7 +1,7 @@
 package com.example.studentapp.controller;
 
 import com.example.studentapp.model.Student;
-import com.example.studentapp.repository.StudentRepository;
+import com.example.studentapp.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,17 +12,20 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private StudentService studentService;
 
-    // Get all students
     @GetMapping
     public List<Student> getAllStudents() {
-        return studentRepository.findAll();
+        return studentService.getAllStudents();
     }
 
-    // Add a new student
     @PostMapping
-    public Student addStudent(@RequestBody Student student) {
-        return studentRepository.save(student);
+    public Student createStudent(@RequestBody Student student) {
+        return studentService.saveStudent(student);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
     }
 }

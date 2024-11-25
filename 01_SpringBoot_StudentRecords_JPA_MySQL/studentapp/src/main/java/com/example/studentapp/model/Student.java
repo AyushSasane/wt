@@ -1,18 +1,31 @@
 package com.example.studentapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "students")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column
+    private int age;
+
+    public Student() {}
+
+    public Student(String name, String email, int age) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+    }
 
     // Getters and Setters
     public Long getId() {
@@ -37,5 +50,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

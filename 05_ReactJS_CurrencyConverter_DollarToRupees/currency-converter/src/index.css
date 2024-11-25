@@ -1,0 +1,73 @@
+/* Overall Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Main App Container */
+.App {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 350px;
+}
+
+/* Heading Styling */
+h1 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Currency Converter Section */
+.converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input Field Styling */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3498db;
+}
+
+/* Result Display Styling */
+p {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Converted Currency Amount Styling */
+strong {
+  font-size: 22px;
+  color: #27ae60;
+}
